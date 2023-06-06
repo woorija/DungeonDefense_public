@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DragSprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f06bec66f3604b8478f384aecddba63a, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2d60d2307620fdb4faa4c887a45fd37e, type: 3}
+  - {fileID: 21300000, guid: 07754172c8acd1b45a2630511217d46f, type: 3}
+  - {fileID: 21300000, guid: c24b52732f6d2d949a35545b7ca61ad1, type: 3}
+  - {fileID: 21300000, guid: e87a87839899e8d4eb8c375136d8cef7, type: 3}
+  - {fileID: 21300000, guid: 011bd745e45041e48aad7226f70e0c5b, type: 3}
+  - {fileID: 21300000, guid: a2d031551c0dd054a80a0c655f8aa4fd, type: 3}
+  - {fileID: 21300000, guid: c517a7261ac84714e814251e7a6860e9, type: 3}
+  - {fileID: 21300000, guid: b3c812f604403d64b9aca0fc523497b2, type: 3}
+  - {fileID: 21300000, guid: c56c6f57b8d2c5249b890265c57af654, type: 3}
+  - {fileID: 21300000, guid: 6252dd0abc5592e4a814f8dbf42133e3, type: 3}
+  - {fileID: 21300000, guid: f3d9591cf8f8cd340b96a71bb7ef341c, type: 3}
+  - {fileID: 21300000, guid: 1542cd8fdf0b3484c959b2c2ad126a73, type: 3}
+  - {fileID: 21300000, guid: 35f0cadf6abd1a141b74d0c0adaf5e7e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - BloodBat
+  - Skeleton
+  - Phantom
+  - Abomination
+  - Specter
+  - Vampire
+  - DeathKnight
+  - SkeletonKnight
+  - Ghost
+  - Field
+  - Zombie
+  - Ghoul
+  - VampireLord
+  m_RenderDataMap: {}
+  m_Tag: DragSprites
+  m_IsVariant: 0

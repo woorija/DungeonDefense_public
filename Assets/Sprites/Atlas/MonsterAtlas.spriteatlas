@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MonsterAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Standalone
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 12
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8ec2190c40a442544a94a9d8065b4102, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 987b53009239e744db8db7f07e2acfc4, type: 3}
+  - {fileID: 21300000, guid: 3e81f5507eb733547ad1fe0251845574, type: 3}
+  - {fileID: 21300000, guid: 1da80c9031dc5bf43ac81651a8965976, type: 3}
+  - {fileID: 21300000, guid: 1f79fbb0ad8a5d5438e69becf4ea18b6, type: 3}
+  - {fileID: 21300000, guid: f3c4c6110414d99408d631b77f9774bc, type: 3}
+  - {fileID: 21300000, guid: f29a9711972c6e8478bb88bbeb97c211, type: 3}
+  - {fileID: 21300000, guid: 0d3d962173bee5a41bd7a4fe96b7992a, type: 3}
+  - {fileID: 21300000, guid: c8fae7d1bca0fa04e9ae138aa28ad3e3, type: 3}
+  - {fileID: 21300000, guid: 7b9be2f15951c6b4ba5ed922d4516061, type: 3}
+  - {fileID: 21300000, guid: 2b6d9a129c4ddd444930678cc744dc5a, type: 3}
+  - {fileID: 21300000, guid: c8271d32417f64040a824ab9733e5c2b, type: 3}
+  - {fileID: 21300000, guid: cb265f32ee59f454393c08344ce04c5f, type: 3}
+  - {fileID: 21300000, guid: ce617313283669e4894209fac097afad, type: 3}
+  - {fileID: 21300000, guid: f099ed23e33a33141884d50f51426e4f, type: 3}
+  - {fileID: 21300000, guid: ca6b2f43012d38f4c922034680782a9a, type: 3}
+  - {fileID: 21300000, guid: 0405ad533f37ed54eb5934545d5cdef7, type: 3}
+  - {fileID: 21300000, guid: 5f88d173585cc7a42b203c9badd3ca34, type: 3}
+  - {fileID: 21300000, guid: 125d1de300b088d468fdd9b9d0bc0abd, type: 3}
+  - {fileID: 21300000, guid: bec565f358e2b294fba8c73fbe898e19, type: 3}
+  - {fileID: 21300000, guid: ac87cbf369ed84d44841bdf9aa46cb11, type: 3}
+  - {fileID: 21300000, guid: e6624fd4d50abd44b9daac23d84bdf34, type: 3}
+  - {fileID: 21300000, guid: 37c4dd25428e718479acb66b0230061c, type: 3}
+  - {fileID: 21300000, guid: c0148b656cc6e9a4eae7ff848445b680, type: 3}
+  - {fileID: 21300000, guid: 8ddfc726e7326a14a803aab323982631, type: 3}
+  - {fileID: 21300000, guid: 52836486029b7bc408416dc2e50a3ee7, type: 3}
+  - {fileID: 21300000, guid: 985f978602cf2124cbb325547033a969, type: 3}
+  - {fileID: 21300000, guid: 5eb64fb6e17edca48823ae468473ba35, type: 3}
+  - {fileID: 21300000, guid: 27bf7b877d0898342a4f0e50bf3ab5ad, type: 3}
+  - {fileID: 21300000, guid: 73ceab48b7844174ab2f911bd00b79dd, type: 3}
+  - {fileID: 21300000, guid: 8dd5f3b8fade08945889712e8d330483, type: 3}
+  - {fileID: 21300000, guid: 59349b29d6b08d544bb4542927ef473c, type: 3}
+  - {fileID: 21300000, guid: 7659d65a416a2fe408e1d896e2e3d401, type: 3}
+  - {fileID: 21300000, guid: ebf9175aa84ba11459d570c4b13eb486, type: 3}
+  - {fileID: 21300000, guid: e58c7a8ab499ec04897f89120fe52553, type: 3}
+  - {fileID: 21300000, guid: 71f6e9ea7a4b476468def8d8187eae37, type: 3}
+  - {fileID: 21300000, guid: 391ac21b173195e47bc2afea7db7b346, type: 3}
+  - {fileID: 21300000, guid: f53b822bf9a22e1428e2f1a72c54212e, type: 3}
+  - {fileID: 21300000, guid: 55afd42bc25229041892954d0212e2a4, type: 3}
+  - {fileID: 21300000, guid: 2559392b43da6ef4097c401b12247841, type: 3}
+  - {fileID: 21300000, guid: 7183e93b93691aa42a2fd20e590cc62e, type: 3}
+  - {fileID: 21300000, guid: 1052d48b99acc9549b4238f669451fcb, type: 3}
+  - {fileID: 21300000, guid: 0929f81c6cf1c6944807cbb3949eac99, type: 3}
+  - {fileID: 21300000, guid: f386094c652657e4ca945a42e94c3bd1, type: 3}
+  - {fileID: 21300000, guid: c7f0df6c0ecff1140abdff3c3c0ebfab, type: 3}
+  - {fileID: 21300000, guid: 953a736d9122d7548a7ce1debaed0ea8, type: 3}
+  - {fileID: 21300000, guid: 1e9a346d2df964a4984b5ceae3a3a330, type: 3}
+  - {fileID: 21300000, guid: cd9645ad8874f3d4db60d870468615c3, type: 3}
+  - {fileID: 21300000, guid: 270c808efabbe8944a7104229e8638d3, type: 3}
+  - {fileID: 21300000, guid: 8fa6648e3314cfc41941bdce57dc4d6a, type: 3}
+  - {fileID: 21300000, guid: 93f5e1be23fe6084fae64e2d8f753549, type: 3}
+  - {fileID: 21300000, guid: 6528f12f0e1154d4e9c1e7816e434f20, type: 3}
+  - {fileID: 21300000, guid: 0ceac54f1e37ff842ba81501057019b3, type: 3}
+  - {fileID: 21300000, guid: c6a01a4fa2091bd49b4a3cfcaa31c529, type: 3}
+  - {fileID: 21300000, guid: b9e23e4f4ad894542842177ab622f1fc, type: 3}
+  - {fileID: 21300000, guid: 3a39527f4b0790f4ea1a350fcf175f78, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - char_Cleopatra_walking_no shadow 02
+  - "char_S\xE9adanda_walking 02"
+  - Char_Gilgamesh_walking_no shadow 07
+  - char_Cleo mob2_walking_no shadow 01
+  - char_Cleo mob2_walking_no shadow 02
+  - char_Cleopatra_dying
+  - char_Cadmus_walking_no shadow 02
+  - "char_S\xE9adanda_walking 08"
+  - "char_S\xE9adanda_walking 03"
+  - "char_S\xE9adanda mob 3_walking 1"
+  - char_Cadmus mob3_walking 02
+  - char_Cleo mob1_walking_no shadow 02
+  - Shadow
+  - char_Cleo mob1_walking_no shadow 01
+  - "char_S\xE9adanda_walking 01"
+  - char_Cleopatra_walking_no shadow 03
+  - char_Cleopatra_walking_no shadow 01
+  - char_Cadmus_dying
+  - char_Cadmus_walking_no shadow 08
+  - char_Cleopatra_walking_no shadow 07
+  - "char_S\xE9adanda mob 2_walking 2"
+  - "char_S\xE9adanda mob 3_walking 2"
+  - Char_Gilgamesh_walking_no shadow 06
+  - "char_S\xE9adanda_walking 04"
+  - "char_S\xE9adanda_walking 05"
+  - Char_Gilgamesh_walking_no shadow 08
+  - char_Cadmus_walking_no shadow 01
+  - char_Cadmus_walking_no shadow 03
+  - "char_S\xE9adanda_walking 07"
+  - Char_Gilgamesh_walking_no shadow 04
+  - char_Cadmus_walking_no shadow 05
+  - Char_Gilgamesh_walking_no shadow 02
+  - char_Gilgamesh_dying
+  - "char_S\xE9adanda mob 1_walking 1"
+  - char_Cleopatra_walking_no shadow 06
+  - char_Cleopatra_walking_no shadow 05
+  - Char_Gilgamesh_walking_no shadow 01
+  - char_Cadmus_walking_no shadow 07
+  - "char_S\xE9adanda_walking 06"
+  - char_Cadmus_walking_no shadow 04
+  - char_Cadmus mob2_walking 02
+  - Char_Gilgamesh_walking_no shadow 05
+  - char_Cleopatra_walking_no shadow 08
+  - char_Cadmus_walking_no shadow 06
+  - "char_S\xE9adanda mob 1_walking 2"
+  - Char_Gilgamesh_walking_no shadow 03
+  - char_Cadmus mob1_walking 02
+  - char_Cadmus mob1_walking 01
+  - char_Cleopatra_walking_no shadow 04
+  - "char_S\xE9adanda_dying"
+  - char_Cadmus mob2_walking 01
+  - char_Cleo mob3_walking 01
+  - char_Cleo mob3_walking 02
+  - char_Cadmus mob3_walking 01
+  - "char_S\xE9adanda mob 2_walking 1"
+  m_RenderDataMap: {}
+  m_Tag: MonsterAtlas
+  m_IsVariant: 0
