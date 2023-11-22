@@ -6,29 +6,29 @@ public class VampireBust : MonoBehaviour
 {
     List<Monster> monsters;
 
-    float stuntime;
+    float stunTime;
 
     private void Awake()
     {
         monsters = new List<Monster>();
-        stuntime = 0.1f;
+        stunTime = 0.1f;
     }
 
     private void OnEnable()
     {
-        StartCoroutine(explosion_start());
+        StartCoroutine(ExplosionStart());
     }
 
     void Bust()
     {
         for (int i = 0; i < monsters.Count; i++)
         {
-            monsters[i].Hit_to_normal(200, 3, 11);
-            monsters[i].stun(stuntime);
+            monsters[i].HitToNormal(200, 3, 11);
+            monsters[i].Stun(stunTime);
         }
     }
 
-    IEnumerator explosion_start()
+    IEnumerator ExplosionStart()
     {
         yield return new WaitForSeconds(0.03f);
         Bust();

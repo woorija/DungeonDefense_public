@@ -5,9 +5,9 @@ using UnityEngine;
 public class CardReward : MonoBehaviour
 {
     [SerializeField] Animator[] cards;
-    [SerializeField] GameObject[] card_btns;
+    [SerializeField] GameObject[] cardButtons;
 
-    int[] _random = new int[4] { 0, 1, 2, 3 };
+    int[] random = new int[4] { 0, 1, 2, 3 };
 
     private void OnEnable()
     {
@@ -20,37 +20,37 @@ public class CardReward : MonoBehaviour
             cards[i].Rebind();
             cards[i].speed = 0;
         }
-        shuffle();
-        for (int i = 0; i < card_btns.Length; i++)
+        Shuffle();
+        for (int i = 0; i < cardButtons.Length; i++)
         {
-            if (!card_btns[i].activeSelf)
-                card_btns[i].SetActive(true);
+            if (!cardButtons[i].activeSelf)
+                cardButtons[i].SetActive(true);
         }
     }
 
-    void shuffle()
+    void Shuffle()
     {
-        for (int i = 0; i < _random.Length; i++)
+        for (int i = 0; i < random.Length; i++)
         {
-            int rand1 = Random.Range(0, _random.Length);
-            int rand2 = Random.Range(0, _random.Length);
-            int temp = _random[rand1];
-            _random[rand1] = _random[rand2];
-            _random[rand2] = temp;
+            int rand1 = Random.Range(0, random.Length);
+            int rand2 = Random.Range(0, random.Length);
+            int temp = random[rand1];
+            random[rand1] = random[rand2];
+            random[rand2] = temp;
         }
     }
 
-    public void Select_Card(int _num) // 카드버튼 클릭시
+    public void SelectCard(int _num) // 카드버튼 클릭시
     {
-        int unit = _random[_num];
+        int unit = random[_num];
         cards[_num].speed = 1;
         if (Random.Range(0, 5) == 0) // 20%확률로 2티어 유닛 획득
         {
             unit += 4;
         }
-        GameManager.Instance.Money_manager.Add_Unitcount(unit);
+        GameManager.Instance.moneyManager.AddUnitcount(unit);
         cards[_num].SetInteger("Type", unit);
-        card_btns[_num].SetActive(false);
-        UIManager.Instance.Select_UnitReward();
+        cardButtons[_num].SetActive(false);
+        UIManager.Instance.SelectUnitReward();
     }
 }

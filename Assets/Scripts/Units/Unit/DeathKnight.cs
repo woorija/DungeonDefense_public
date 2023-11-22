@@ -10,21 +10,19 @@ public class DeathKnight : UnitBase
     }
     public override void UnitInit(int _num)
     {
-        GameManager.Instance.Synergy_manager.Increase_Unitcount(UnitType.Skeleton);
+        GameManager.Instance.synergyManager.IncreaseUnitcount(UnitType.Skeleton);
         base.UnitInit(_num);
         AttackEvent.AddListener(AttackMonster);
         UnitDrag.Instance.DK_SpecialAbility();
     }
-    protected override void Apply_ArtifactOption()
+    protected override void ApplyArtifactOption()
     {
-        int add_type_damage = ArtifactManager.Instance.have_Artifact[0] ? 5 : 0;
-        int add_unit_damage = ArtifactManager.Instance.have_Artifact[6] ? 30 : 0;
-        float add_unit_range = ArtifactManager.Instance.have_Artifact[6] ? 1f : 0f;
+        int addTypeDamage = ArtifactManager.Instance.hasArtifacts[0] ? 5 : 0;
+        int addUnitDamage = ArtifactManager.Instance.hasArtifacts[6] ? 30 : 0;
+        float addUnitRange = ArtifactManager.Instance.hasArtifacts[6] ? 1f : 0f;
 
-        damage = BaseData.base_attackpower + add_type_damage + add_unit_damage;
-        _range.RangeInit(BaseData.base_range + add_unit_range);
-        temp_cooltime = BaseData.base_attackcooltime;
-
-        Debug.Log("deathknight | " + add_type_damage + " | " + add_unit_damage + "|" + add_unit_range + " | " + temp_cooltime);
+        damage = BaseData.baseAttackPower + addTypeDamage + addUnitDamage;
+        range.RangeInit(BaseData.baseRange + addUnitRange);
+        tempCooltime = BaseData.baseAttackCooltime;
     }
 }

@@ -5,22 +5,22 @@ using UnityEngine.EventSystems;
 
 public class ArchLich : MonoBehaviour,IPointerClickHandler
 {
-    int use_unitmana = 5;
-    int use_artifactmana = 10;
+    int useManaToUnit = 5;
+    int useManaToArtifact = 10;
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if (GameManager.Instance.Money_manager.UseMana(use_unitmana))
+            if (GameManager.Instance.moneyManager.UseMana(useManaToUnit))
             {
-                GameManager.Instance.Money_manager.Add_Unitcount(Random.Range(0, 4));
+                GameManager.Instance.moneyManager.AddUnitcount(Random.Range(0, 4));
             }
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            if (ArtifactManager.Instance.Artifacts.Count <= 20 && GameManager.Instance.Money_manager.UseMana(use_artifactmana))
+            if (ArtifactManager.Instance.Artifacts.Count <= 20 && GameManager.Instance.moneyManager.UseMana(useManaToArtifact))
             {
-                ArtifactManager.Instance.Get_Random_Artifact();
+                ArtifactManager.Instance.GetRandomArtifact();
             }
         }
     }

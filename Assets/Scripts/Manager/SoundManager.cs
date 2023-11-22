@@ -50,7 +50,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
                 break;
             case "PlayScene":
             case "InfiScene":
-                UIManager.Instance.EXIT_Option();
+                UIManager.Instance.EXITOption();
                 break;
         }
         SettingUI.SetActive(false);

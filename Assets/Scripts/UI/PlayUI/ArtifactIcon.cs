@@ -6,32 +6,32 @@ using UnityEngine.EventSystems;
 
 public class ArtifactIcon : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
-    [SerializeField] int Artifact_num;
-    [SerializeField] Image Icon_sprite;
+    [SerializeField] int ArtifactNum;
+    [SerializeField] Image IconSprite;
 
-    public void Set_Artifact(int _num) //유물 획득시 유물설정
+    public void SetArtifact(int _num) //유물 획득시 유물설정
     {
-        Artifact_num = _num;
-        Icon_sprite.sprite = ResourceManager.Get_Sprite("ArtifactIcons/Artifact" + _num);
+        ArtifactNum = _num;
+        IconSprite.sprite = ResourceManager.GetSprite("ArtifactIcons/Artifact" + _num);
     }
-    public void Remove_Artifact()
+    public void RemoveArtifact()
     {
-        Artifact_num = 0;
-        Icon_sprite.sprite = null;
+        ArtifactNum = 0;
+        IconSprite.sprite = null;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        ArtifactManager.Instance.Popup_information(Artifact_num);
+        ArtifactManager.Instance.PopupInformation(ArtifactNum);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ArtifactManager.Instance.exit_information();
+        ArtifactManager.Instance.ExitInformation();
     }
 
-    public int Get_Artifactnum() // 긴급탈출장치 파악용
+    public int GetArtifactNumber() // 긴급탈출장치 파악용
     {
-        return Artifact_num;
+        return ArtifactNum;
     }
 }

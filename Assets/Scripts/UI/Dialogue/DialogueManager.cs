@@ -15,14 +15,14 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogueBG;
     [SerializeField] GameObject portrait;
 
-    public void Dialogue_Init(int _stage)
+    public void DialogueInit(int _stage)
     {
         dialogue.gameObject.SetActive(true);
         dialogueBG.SetActive(true);
         portrait.SetActive(true);
         dialogue.Init(_stage);
     }
-    public void Dialogue_End()
+    public void DialogueEnd()
     {
         dialogue.gameObject.SetActive(false);
         dialogueBG.SetActive(false);

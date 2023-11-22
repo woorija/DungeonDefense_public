@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 11187054}
   - component: {fileID: 11187053}
   m_Layer: 5
-  m_Name: GameStartBtn
+  m_Name: GameStartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 312690516}
         m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
-        m_MethodName: Play_onClick
+        m_MethodName: onClickPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 312690517}
   - component: {fileID: 312690516}
   m_Layer: 0
-  m_Name: BtnScripts
+  m_Name: ButtonScripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 454704681}
   - component: {fileID: 454704680}
   m_Layer: 5
-  m_Name: EXITBtn
+  m_Name: EXITButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 312690516}
         m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
-        m_MethodName: Game_EXIT_onClick
+        m_MethodName: onClickGameEXIT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 774957408}
   - component: {fileID: 774957407}
   m_Layer: 5
-  m_Name: SettingBtn
+  m_Name: SettingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 312690516}
         m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
-        m_MethodName: Setting_onClick
+        m_MethodName: onClickSetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -973,7 +973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version TEST 0.0.1
+  m_Text: Version TEST 23.11.20
 --- !u!222 &900362388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 905401612}
   - component: {fileID: 905401611}
   m_Layer: 5
-  m_Name: infiStartBtn
+  m_Name: infiStartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1067,7 +1067,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 312690516}
         m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
-        m_MethodName: PlayInfi_onClick
+        m_MethodName: onClickPlayInfi
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 1203979571}
   - component: {fileID: 1203979570}
   m_Layer: 5
-  m_Name: TipBtn
+  m_Name: TipButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,37 +1248,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203979568}
   m_CullTransparentMesh: 1
---- !u!1 &1250702250
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1250702251}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1250702251
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250702250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8379962, y: 4.459545, z: -284.0761}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1756243111
 GameObject:
   m_ObjectHideFlags: 0

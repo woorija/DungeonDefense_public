@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unittile : MonoBehaviour
+public class UnitTile : MonoBehaviour
 {
     UnitBase unit;
-    public bool unit_check { get; private set; } = false;
+    public bool unitCheck { get; private set; } = false;
 
     private void Start()
     {
@@ -14,24 +14,24 @@ public class Unittile : MonoBehaviour
 
     public void Init()
     {
-        Delete_Unit();
+        DeleteUnit();
         gameObject.SetActive(true); // 제거된 타일 재생성
     }
 
-    public void Create_Unit(int _num) // 마나가 있으면 유닛을 해당 위치에 생성
+    public void CreateUnit(int _num) // 마나가 있으면 유닛을 해당 위치에 생성
     {
-        if (unit_check) return;
+        if (unitCheck) return;
 
-        unit_check = true;
+        unitCheck = true;
         unit = UnitSpawner.Instance.Create_Unit(transform.position, _num);
-        GameManager.Instance.Money_manager.Sub_Unitcount(_num, 1);
+        GameManager.Instance.moneyManager.SubUnitcount(_num, 1);
     }
-    public void Delete_Unit()
+    public void DeleteUnit()
     {
         if (unit != null) // 소환된 유닛 제거
             unit.UnitDelete();
         unit = null;
-        unit_check = false;
+        unitCheck = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) // 맵 초기화 이후 유닛을 생성할 수 없는 위치의 타일 제거

@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject BoxObj; // 유물선택
     [SerializeField] GameObject RewardBG; // 선택금지용
     [SerializeField] GameObject RewardFG; // 선택금지용2
-    [SerializeField] GameObject Tutorial_CardObj; //튜토 카드선택
+    [SerializeField] GameObject StartCardObj; //시작 카드선택
 
     [SerializeField] Button FieldButton; //바탕클릭용 버튼
 
@@ -35,30 +35,30 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void Popup_Option() // 옵션창 버튼 클릭
+    public void PopupOption() // 옵션창 버튼 클릭
     {
         PauseUI.SetActive(false);
         SoundManager.Instance.Popup_settingUI();
     }
 
-    public void EXIT_Option()
+    public void EXITOption()
     {
         PauseUI.SetActive(true);
     }
 
-    public void Move_Title() // 타이틀 버튼 클릭
+    public void MoveTitle() // 타이틀 버튼 클릭
     {
         CustomSceneManager.Instance.SceneLoad("TitleScene");
     }
 
     public void Restart() // 재시작 버튼 클릭
     {
-        GameManager.Instance.Stage_manager.ReStart();
+        GameManager.Instance.stageManager.ReStart();
         PauseUI.SetActive(false);
         Time.timeScale = 1;
     }
 
-    public void Gameover() // 적군이 아크리치에 닿을시
+    public void GameOver() // 적군이 아크리치에 닿을시
     {
         SoundManager.Instance.PlayNormalSfx(2);
         GameoverUI.SetActive(true);
@@ -71,26 +71,26 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void Gameover_Click()
+    public void GameOverClick()
     {
         CustomSceneManager.Instance.SceneLoad("TitleScene");
     }
 
-    public void Popup_Card_Start() //스타트1번
+    public void PopupCardStart() //스타트1번
     {
         UnitDrag.Instance.DragEnd();
-        Tutorial_CardObj.SetActive(true);
+        StartCardObj.SetActive(true);
         RewardBG.SetActive(true);
     }
 
-    public void Popup_Cardreward() //스테이지1번
+    public void PopupCardReward() //스테이지1번
     {
         UnitDrag.Instance.DragEnd();
         CardObj.SetActive(true);
         RewardBG.SetActive(true);
     }
 
-    public void Popup_Artifactreward() // 스테이지 3번
+    public void PopupArtifactReward() // 스테이지 3번
     {
         RewardBG.SetActive(true);
         FieldButton.onClick.RemoveAllListeners();
@@ -99,77 +99,77 @@ public class UIManager : MonoBehaviour
         BoxObj.SetActive(true);
     }
 
-    public void EXIT_Start_reward() // 스타트 3번
+    public void EXITStartReward() // 스타트 3번
     {
         RewardBG.SetActive(false);
-        Tutorial_CardObj.SetActive(false);
+        StartCardObj.SetActive(false);
         FieldButton.onClick.RemoveAllListeners();
         FieldButton.gameObject.SetActive(false);
         GameManager.Instance.GameStart();
     }
 
-    public void Select_UnitReward() //스테이지 2번
+    public void SelectUnitReward() //스테이지 2번
     {
         FieldButton.gameObject.SetActive(true);
 
-        switch (GameManager.Instance.gamemode)
+        switch (GameManager.Instance.gameMode)
         {
             case GameMode.Story:
-                FieldButton.onClick.AddListener(Popup_Artifactreward);
+                FieldButton.onClick.AddListener(PopupArtifactReward);
                 break;
             case GameMode.Infinity:
-                FieldButton.onClick.AddListener(EXIT_Reward_infinitymode);
+                FieldButton.onClick.AddListener(EXITRewardInfinitymode);
                 break;
         }
 
-        StartCoroutine(Cor_Select_Reward());
+        StartCoroutine(AntiClickCoroutine());
     }
 
-    public void Select_StartReward() // 스타트 2번
+    public void SelectStartReward() // 스타트 2번
     {
         FieldButton.gameObject.SetActive(true);
-        FieldButton.onClick.AddListener(EXIT_Start_reward);
-        StartCoroutine(Cor_Select_Reward());
+        FieldButton.onClick.AddListener(EXITStartReward);
+        StartCoroutine(AntiClickCoroutine());
     }
 
-    public void Select_ArtifactReward() // 4번
+    public void SelectArtifactReward() // 4번
     {
         FieldButton.gameObject.SetActive(true);
-        switch (GameManager.Instance.gamemode)
+        switch (GameManager.Instance.gameMode)
         {
             case GameMode.Story:
-                FieldButton.onClick.AddListener(EXIT_Reward_storymode);
+                FieldButton.onClick.AddListener(EXITRewardStorymode);
                 break;
             case GameMode.Infinity:
-                FieldButton.onClick.AddListener(EXIT_Reward_infinitymode);
+                FieldButton.onClick.AddListener(EXITRewardInfinitymode);
                 break;
         }
-        StartCoroutine(Cor_Select_Reward());
+        StartCoroutine(AntiClickCoroutine());
     }
 
-    IEnumerator Cor_Select_Reward() //클릭방지용
+    IEnumerator AntiClickCoroutine() //클릭방지용
     {
         RewardFG.SetActive(true);
         yield return YieldCache.WaitForSeconds(2.0f);
         RewardFG.SetActive(false);
     }
 
-    public void EXIT_Reward_storymode() // 5번
+    public void EXITRewardStorymode() // 5번
     {
         RewardBG.SetActive(false);
         BoxObj.SetActive(false);
         FieldButton.onClick.RemoveAllListeners();
         FieldButton.gameObject.SetActive(false);
-        GameManager.Instance.Stage_manager.Nextstage_Start();
+        GameManager.Instance.stageManager.NextStageStart();
     }
 
-    public void EXIT_Reward_infinitymode()
+    public void EXITRewardInfinitymode()
     {
         RewardBG.SetActive(false);
         BoxObj.SetActive(false);
         CardObj.SetActive(false);
         FieldButton.onClick.RemoveAllListeners();
         FieldButton.gameObject.SetActive(false);
-        GameManager.Instance.Stage_manager.Nextstage_Start();
+        GameManager.Instance.stageManager.NextStageStart();
     }
 }

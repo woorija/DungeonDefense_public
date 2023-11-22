@@ -7,10 +7,10 @@ public class ArtifactReward : MonoBehaviour
 {
     [SerializeField] Animator[] Artifacts;
     [SerializeField] ArtifactIcon[] Icons;
-    [SerializeField] GameObject[] Artifact_btns;
+    [SerializeField] GameObject[] ArtifactButtons;
     List<int> Artifactlist;
 
-    int _count;
+    int count;
 
     private void OnEnable()
     {
@@ -18,40 +18,40 @@ public class ArtifactReward : MonoBehaviour
     }
     void Init() // UI초기화
     {
-        _count = 0;
+        count = 0;
         for (int i = 0; i < Artifacts.Length; i++)
         {
             Artifacts[i].Rebind();
             Artifacts[i].speed = 0;
         }
-        for (int i = 0; i < Artifact_btns.Length; i++)
+        for (int i = 0; i < ArtifactButtons.Length; i++)
         {
-            if (!Artifact_btns[i].activeSelf)
-                Artifact_btns[i].SetActive(true);
+            if (!ArtifactButtons[i].activeSelf)
+                ArtifactButtons[i].SetActive(true);
         }
     }
 
-    public void Select_Artifact(int _num) // 유물선택버튼
+    public void SelectArtifact(int _num) // 유물선택버튼
     {
         Artifacts[_num].speed = 1;
-        _count++;
+        count++;
         SoundManager.Instance.PlayNormalSfx(4);
-        Get_RandomArtifact(_num);
+        GetRandomArtifact(_num);
 
-        if (_count == 2)
+        if (count == 2)
         {
-            UIManager.Instance.Select_ArtifactReward();
+            UIManager.Instance.SelectArtifactReward();
         }
     }
 
     //랜덤유물 획득함수
-    void Get_RandomArtifact(int _num)
+    void GetRandomArtifact(int _num)
     {
-        Artifactlist = new List<int>(ArtifactManager.Instance.Not_have_Artifactlist.ToArray());
+        Artifactlist = new List<int>(ArtifactManager.Instance.notHaveArtifactList.ToArray());
 
         int result = Artifactlist[Random.Range(0, Artifactlist.Count)];
-        Icons[_num].Set_Artifact(result);
-        Artifact_btns[_num].SetActive(false);
-        ArtifactManager.Instance.Get_Artifact(result);
+        Icons[_num].SetArtifact(result);
+        ArtifactButtons[_num].SetActive(false);
+        ArtifactManager.Instance.GetArtifact(result);
     }
 }

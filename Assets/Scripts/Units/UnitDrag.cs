@@ -33,14 +33,14 @@ public class UnitDrag : MonoBehaviour
     {
         isDrag = true;
         unit_num = _num;
-        drag_sprite.sprite = ResourceManager.GetSprite_to_atlas("DragSprites", DataBase.Instance.unitDB.UnitDataBase[_num].path);
+        drag_sprite.sprite = ResourceManager.GetSpriteToAtlas("DragSprites", DataBase.Instance.unitDB.UnitDataBase[_num].path);
     }
 
     public void DK_SpecialAbility() //데나 소환시 자동적용되는 장판생성용 드래그호출함수
     {
         isDrag = false;
         isFieldDrag = true;
-        drag_sprite.sprite = ResourceManager.GetSprite_to_atlas("DragSprites", "Field");
+        drag_sprite.sprite = ResourceManager.GetSpriteToAtlas("DragSprites", "Field");
     }
 
     public void DragEnd()

@@ -5,69 +5,69 @@ using UnityEngine;
 public class ButtonScripts : MonoBehaviour // 버튼스크립트 모음
 {
     #region 인게임 버튼
-    public void PauseBtn_onClick()
+    public void onClickPauseButton()
     {
         UIManager.Instance.Pause();
-        click_sound();
+        PlayClickSound();
     }
 
-    public void ResumeBtn_onClick()
+    public void onClickResumeButton()
     {
         UIManager.Instance.Resome();
-        click_sound();
+        PlayClickSound();
     }
 
-    public void RestartBtn_onClick()
+    public void onClickRestartButton()
     {
         UIManager.Instance.Restart();
-        click_sound();
+        PlayClickSound();
     }
 
-    public void MainBtn_onClick()
+    public void onClickMainButton()
     {
-        UIManager.Instance.Move_Title();
-        click_sound();
+        UIManager.Instance.MoveTitle();
+        PlayClickSound();
     }
 
-    public void OptionBtn_onClick()
+    public void onClickOptionButton()
     {
-        UIManager.Instance.Popup_Option();
-        click_sound();
+        UIManager.Instance.PopupOption();
+        PlayClickSound();
     }
 
-    public void Gameover_onClick()
+    public void onClickGameOver()
     {
-        UIManager.Instance.Gameover_Click();
-        click_sound();
+        UIManager.Instance.GameOverClick();
+        PlayClickSound();
     }
     #endregion
 
     #region 타이틀화면 버튼
-    public void Play_onClick()
+    public void onClickPlay()
     {
         CustomSceneManager.Instance.SceneLoad("PlayScene");
-        click_sound();
+        PlayClickSound();
     }
 
-    public void PlayInfi_onClick()
+    public void onClickPlayInfi()
     {
         CustomSceneManager.Instance.SceneLoad("InfiScene");
-        click_sound();
+        PlayClickSound();
     }
 
-    public void Game_EXIT_onClick()
+    public void onClickGameEXIT()
     {
         CustomSceneManager.Instance.EXIT();
-        click_sound();
+        PlayClickSound();
     }
 
-    public void Setting_onClick()
+    public void onClickSetting()
     {
         SoundManager.Instance.Popup_settingUI();
-        click_sound();
+        PlayClickSound();
     }
     #endregion
-    void click_sound()
+    void PlayClickSound()
     {
         SoundManager.Instance.PlayNormalSfx(3);
     }

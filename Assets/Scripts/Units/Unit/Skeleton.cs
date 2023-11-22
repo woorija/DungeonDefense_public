@@ -11,18 +11,17 @@ public class Skeleton : UnitBase
 
     public override void UnitInit(int _num)
     {
-        GameManager.Instance.Synergy_manager.Increase_Unitcount(UnitType.Skeleton);
+        GameManager.Instance.synergyManager.IncreaseUnitcount(UnitType.Skeleton);
         base.UnitInit(_num);
         AttackEvent.AddListener(AttackMonster);
     }
 
-    protected override void Apply_ArtifactOption()
+    protected override void ApplyArtifactOption()
     {
-        int add_type_damage = ArtifactManager.Instance.have_Artifact[0] ? 5 : 0;
-        int add_unit_damage = ArtifactManager.Instance.have_Artifact[4] ? 10 : 0;
+        int addTypeDamage = ArtifactManager.Instance.hasArtifacts[0] ? 5 : 0;
+        int addUnitDamage = ArtifactManager.Instance.hasArtifacts[4] ? 10 : 0;
 
-        damage = BaseData.base_attackpower + add_type_damage + add_unit_damage;
-        temp_cooltime = BaseData.base_attackcooltime;
-        Debug.Log("skeleton | " + add_type_damage + " | " + add_unit_damage + "|" + temp_cooltime);
+        damage = BaseData.baseAttackPower + addTypeDamage + addUnitDamage;
+        tempCooltime = BaseData.baseAttackCooltime;
     }
 }

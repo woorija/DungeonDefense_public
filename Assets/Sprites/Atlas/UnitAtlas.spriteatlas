@@ -149,104 +149,104 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 15cb818f3236c3b44b17ce172f1b3fe0, type: 3}
   - {fileID: 21300000, guid: 57a1e4bf6ede2fc46acb5de7afeca2a1, type: 3}
   m_PackedSpriteNamesToIndex:
-  - "\u3131\u315C\u3147\u315C\u3139 \u3131\u3157\u3147\u3131\u3155\u31315"
-  - "\uC720\uB839 \uACF5\uACA9 5"
-  - char_vampire_attack 03
-  - "\uAD6C\uC6B8 idle2"
-  - "\uC2A4\uD399\uD1303"
-  - char_skeleton knight_idel motion 04
-  - "\uC720\uB839 \uACF5\uACA9 4"
-  - "\uC880\uBE44 \uCE21\uBA74 \uACF5\uACA9 6"
-  - char_skeleton knight_attack 04
-  - DeathKnight attack5
-  - "\uC720\uB839 \uACF5\uACA9 1"
-  - DeathKnight attack3
-  - "\uC720\uB839 idle"
-  - char_vampireLord_idel motion 04
-  - Phantom idel2
-  - "\u3131\u315C\u3147\u315C\u3139 \u3131\u3157\u3147\u3131\u3155\u31312"
-  - DeathKnight attack2
-  - Abomination attack1
-  - "\uC2A4\uD399\uD130"
-  - char_skeleton knight_attack 05
-  - Abomination idle1
-  - "\uC720\uB839"
-  - "\u3131\u315C\u3147\u315C\u3139 \u3131\u3157\u3147\u3131\u3155\u31311"
-  - 1
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 \uACF5\uACA9 5"
-  - "\uC880\uBE44 \uCE21\uBA74 \uACF5\uACA9 2"
-  - Abomination idle2
-  - char_vampire_attack 04
-  - Phantom idel1
-  - "\uAD6C\uC6B8 idle1"
-  - Abomination attack5
-  - DeathKnight idel3
-  - char_vampire_attack 05
-  - "\uC544\uD06C\uB9AC\uCE582"
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 \uACF5\uACA9 1"
-  - char_skeleton knight_attack 02
-  - 3
-  - "\uC2A4\uD399\uD1304"
-  - "\uC880\uBE44 \uCE21\uBA74 \uACF5\uACA9 3"
-  - char_vampireLord_idel motion 01
-  - "\uC720\uB839 \uACF5\uACA9 7"
-  - Phantom attack 2
-  - "\uC880\uBE44 \uCE21\uBA74 idle"
-  - char_vampire_idel motion 01
-  - "\uC2A4\uD399\uD1302"
-  - "\uC880\uBE44 \uCE21\uBA74 \uACF5\uACA9 1"
-  - "\u3131\u315C\u3147\u315C\u3139 \u3131\u3157\u3147\u3131\u3155\u31314"
-  - "\uC2A4\uD399\uD130 idle"
-  - char_vampire_attack 06
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 \uACF5\uACA9 3"
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 idle2"
-  - DeathKnight idel1
-  - char_skeleton knight_attack 01
-  - char_vampireLord_idel motion 03
-  - char_skeleton knight_idel motion 02
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 \uACF5\uACA9 4"
-  - DeathKnight idel2
-  - 2
-  - char_vampire_attack 04
-  - "\u3131\u315C\u3147\u315C\u3139 \u3131\u3157\u3147\u3131\u3155\u31313"
-  - "\uC880\uBE44"
-  - char_skeleton knight_attack 03
-  - 4
-  - char_vampire_attack 05
-  - Abomination attack4
-  - "\uC720\uB839 \uACF5\uACA9 3"
-  - "\uD761\uD608\uBC15\uC950 (1)"
-  - char_vampire_attack 02
-  - char_vampire_idel motion 02
-  - DeathKnight attack4
-  - "\uD761\uD608\uBC15\uC950 idle"
-  - "\uC720\uB839 \uACF5\uACA9 6"
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 \uACF5\uACA9 2"
-  - "\uC720\uB839 \uACF5\uACA9 2"
-  - char_vampire_attack 01
-  - Phantom attack 3
-  - char_skeleton knight_idel motion 03
-  - Phantom attack 7
-  - Phantom attack 4
-  - "\uC2A4\uD399\uD1301"
-  - "\uC544\uD06C\uB9AC\uCE58 1"
-  - "\uC2A4\uCF08\uB808\uD1A4 \uCE21\uBA74 idle1"
-  - "\uC880\uBE44 \uCE21\uBA74 \uACF5\uACA9 4"
-  - char_vampire_attack 06
-  - "\uC880\uBE44 \uCE21\uBA74 \uACF5\uACA9 5"
-  - char_vampire_attack 02
-  - char_vampire_attack 01
-  - DeathKnight attack1
-  - char_vampire_idel motion 04
-  - char_vampireLord_idel motion 02
-  - Abomination attack2
-  - Phantom attack 1
-  - char_vampire_idel motion 03
-  - Phantom attack 5
-  - char_vampire_attack 03
-  - Phantom attack 6
-  - Abomination attack3
-  - char_skeleton knight_idel motion 01
+  - Ghoul_attack5
+  - Ghost_attack5
+  - VampireLord_attack3
+  - Ghoul_idle2
+  - Specter_attack3
+  - SkeletonKnight_idle4
+  - Ghost_attack4
+  - Zombie_attack6
+  - SkeletonKnight_attack4
+  - DeathKnight_attack5
+  - Ghost_attack1
+  - DeathKnight_attack3
+  - Ghost_idle1
+  - VampireLord_idle4
+  - Phantom_idle2
+  - Ghoul_attack2
+  - DeathKnight_attack2
+  - Abomination_attack1
+  - Specter_idle2
+  - SkeletonKnight_attack5
+  - Abomination_idle1
+  - Ghost_idle2
+  - Ghoul_attack1
+  - BloodBat_attack1
+  - Skeleton_attack5
+  - Zombie_attack2
+  - Abomination_idle2
+  - VampireLord_attack4
+  - Phantom_idle1
+  - Ghoul_idle1
+  - Abomination_attack5
+  - DeathKnight_idle3
+  - VampireLord_attack5
+  - ArchLich_idle2
+  - Skeleton_attack1
+  - SkeletonKnight_attack2
+  - BloodBat_attack3
+  - Specter_attack4
+  - Zombie_attack3
+  - VampireLord_idle1
+  - Ghost_attack7
+  - Phantom_attack2
+  - Zombie_idle1
+  - Vampire_idle1
+  - Specter_attack2
+  - Zombie_attack1
+  - Ghoul_attack4
+  - Specter_idle1
+  - Vampire_attack6
+  - Skeleton_attack3
+  - Skeleton_idle2
+  - DeathKnight_idle1
+  - SkeletonKnight_attack1
+  - VampireLord_idle3
+  - SkeletonKnight_idle2
+  - Skeleton_attack4
+  - DeathKnight_idle2
+  - BloodBat_attack2
+  - Vampire_attack4
+  - Ghoul_attack3
+  - Zombie_idle2
+  - SkeletonKnight_attack3
+  - BloodBat_attack4
+  - Vampire_attack5
+  - Abomination_attack4
+  - Ghost_attack3
+  - BloodBat_idle2
+  - VampireLord_attack2
+  - Vampire_idle2
+  - DeathKnight_attack4
+  - BloodBat_idle1
+  - Ghost_attack6
+  - Skeleton_attack2
+  - Ghost_attack2
+  - VampireLord_attack1
+  - Phantom_attack3
+  - SkeletonKnight_idle3
+  - Phantom_attack7
+  - Phantom_attack4
+  - Specter_attack1
+  - ArchLich_idle1
+  - Skeleton_idle1
+  - Zombie_attack4
+  - VampireLord_attack6
+  - Zombie_attack5
+  - Vampire_attack2
+  - Vampire_attack1
+  - DeathKnight_attack1
+  - Vampire_idle4
+  - VampireLord_idle2
+  - Abomination_attack2
+  - Phantom_attack1
+  - Vampire_idle3
+  - Phantom_attack5
+  - Vampire_attack3
+  - Phantom_attack6
+  - Abomination_attack3
+  - SkeletonKnight_idle1
   m_RenderDataMap: {}
   m_Tag: UnitAtlas
   m_IsVariant: 0

@@ -7,18 +7,18 @@ public class Explosion : MonoBehaviour
     List<Monster> monsters;
     ParticleSystem particle;
 
-    float stuntime;
+    float stunTime;
 
     private void Awake()
     {
         monsters = new List<Monster>();
         particle = GetComponent<ParticleSystem>();
-        stuntime = 0.4f;
+        stunTime = 0.4f;
     }
 
     private void OnEnable()
     {
-        StartCoroutine(explosion_start());
+        StartCoroutine(ExplosionStart());
         particle.Play();
     }
 
@@ -26,12 +26,12 @@ public class Explosion : MonoBehaviour
     {
         for (int i = 0; i < monsters.Count; i++)
         {
-            monsters[i].Hit_to_explosion(GameManager.Instance.Synergy_manager.zombie_explosion_damage);
-            monsters[i].stun(stuntime);
+            monsters[i].HitToExplosion(GameManager.Instance.synergyManager.zombieExplosionDamage);
+            monsters[i].Stun(stunTime);
         }
     }
 
-    IEnumerator explosion_start()
+    IEnumerator ExplosionStart()
     {
         yield return new WaitForSeconds(0.03f);
         explosion();

@@ -6,7 +6,7 @@ public class TipUI : SingletonBehaviour<TipUI>
 {
     [SerializeField] GameObject tipUI;
     [SerializeField] GameObject[] tips;
-    int current_tip = 0;
+    int currentTipPage = 0;
 
     public void OpenTip()
     {
@@ -18,20 +18,20 @@ public class TipUI : SingletonBehaviour<TipUI>
     }
     public void NextTip()
     {
-        if (current_tip < 2)
+        if (currentTipPage < 2)
         {
-            tips[current_tip].SetActive(false);
-            current_tip++;
-            tips[current_tip].SetActive(true);
+            tips[currentTipPage].SetActive(false);
+            currentTipPage++;
+            tips[currentTipPage].SetActive(true);
         }
     }
     public void PrevTip()
     {
-        if (current_tip > 0)
+        if (currentTipPage > 0)
         {
-            tips[current_tip].SetActive(false);
-            current_tip--;
-            tips[current_tip].SetActive(true);
+            tips[currentTipPage].SetActive(false);
+            currentTipPage--;
+            tips[currentTipPage].SetActive(true);
         }
     }
 }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bloodbat_attack_right
+  m_Name: BloodBat_attack_right
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -130,7 +130,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.23333333
-    functionName: Attack_One_Monster
+    functionName: AttackOneMonster
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

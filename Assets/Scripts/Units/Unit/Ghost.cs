@@ -11,17 +11,17 @@ public class Ghost : UnitBase
 
     public override void UnitInit(int _num)
     {
-        GameManager.Instance.Synergy_manager.Increase_Unitcount(UnitType.Ghost);
+        GameManager.Instance.synergyManager.IncreaseUnitcount(UnitType.Ghost);
         base.UnitInit(_num);
         AttackEvent.AddListener(AttackMonster);
     }
 
-    protected override void Apply_ArtifactOption()
+    protected override void ApplyArtifactOption()
     {
-        int add_type_damage = ArtifactManager.Instance.have_Artifact[1] ? 5 : 0;
-        float inc_attacktime = ArtifactManager.Instance.have_Artifact[7] ? 0.5f : 0f;
+        int addTypeDamage = ArtifactManager.Instance.hasArtifacts[1] ? 5 : 0;
+        float increaseAttackTime = ArtifactManager.Instance.hasArtifacts[7] ? 0.5f : 0f;
 
-        damage = BaseData.base_attackpower + add_type_damage;
-        temp_cooltime = BaseData.base_attackcooltime + inc_attacktime;
+        damage = BaseData.baseAttackPower + addTypeDamage;
+        tempCooltime = BaseData.baseAttackCooltime + increaseAttackTime;
     }
 }

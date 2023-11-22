@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class timeaccel : MonoBehaviour
 {
-    int timescaletype;
+    int timeScaleType;
+    Image image;
+    [SerializeField] Sprite[] accelSprites;
+
     private void Awake()
     {
-        timescaletype = 0;
+        timeScaleType = 0;
+        image = GetComponent<Image>();
     }
 
     public void onClick()
     {
-        switch(timescaletype)
+        timeScaleType = (timeScaleType + 1) % 3;
+        image.sprite = accelSprites[timeScaleType];
+        switch (timeScaleType)
         {
             case 0:
                 Time.timeScale = 1;
@@ -24,6 +31,5 @@ public class timeaccel : MonoBehaviour
                 Time.timeScale = 4;
                 break;
         }
-        timescaletype = (timescaletype + 1) % 3;
     }
 }

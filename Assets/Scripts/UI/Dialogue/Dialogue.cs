@@ -7,128 +7,127 @@ using System.Text;
 public class Dialogue : MonoBehaviour
 {
     [SerializeField]
-    Text dialogue_text;
+    Text dialogueText;
     [SerializeField]
-    Text name_text;
+    Text nameText;
 
     [SerializeField]
-    SpriteRenderer ArchLich_portrait;
+    SpriteRenderer ArchLichPortrait;
     [SerializeField]
-    Animator ArchLich_anim;
+    Animator ArchLichAnimator;
     [SerializeField]
-    SpriteRenderer Boss_portrait;
+    SpriteRenderer BossPortrait;
     [SerializeField]
-    Animator Boss_anim;
+    Animator BossAnimator;
 
-    Coroutine typing;
-    bool typing_complete;
-    StringBuilder Dialoguebuilder = new StringBuilder();
-    string[] dialogue_name = new string[] { "아크리치", "클레오파트라", "카드모스", "셰어단더", "길가메시" };
+    Coroutine typingCoroutine;
+    bool isTypingComplete;
+    StringBuilder dialogueBuilder = new StringBuilder();
+    string[] dialogueName = new string[] { "아크리치", "클레오파트라", "카드모스", "셰어단더", "길가메시" };
     [SerializeField]
-    Sprite[] boss_spr;
-
+    Sprite[] bossSprites;
     int index;
 
-    int name_path;
-    string dialogue_content;
+    int namePath;
+    string dialogueContent;
     void Update()
     {
-        Playing_Dialogue();
+        PlayingDialogue();
     }
 
-    void Set_portrait()
+    void SetPortrait()
     {
-        if(name_path == 0)
+        if(namePath == 0)
         {
-            ArchLich_portrait.sortingOrder = 16;
-            Boss_portrait.sortingOrder = 14;
-            ArchLich_anim.Rebind();
-            ArchLich_anim.speed = 1;
+            ArchLichPortrait.sortingOrder = 16;
+            BossPortrait.sortingOrder = 14;
+            ArchLichAnimator.Rebind();
+            ArchLichAnimator.speed = 1;
         }
         else
         {
-            ArchLich_portrait.sortingOrder = 14;
-            Boss_portrait.sortingOrder = 16;
-            Boss_portrait.sprite = boss_spr[name_path - 1];
-            Boss_anim.Rebind();
-            Boss_anim.speed = 1;
+            ArchLichPortrait.sortingOrder = 14;
+            BossPortrait.sortingOrder = 16;
+            BossPortrait.sprite = bossSprites[namePath - 1];
+            BossAnimator.Rebind();
+            BossAnimator.speed = 1;
         }
     }
 
     public void Init(int _index)
     {
         index = _index * 100 + 1;
-        Dialoguebuilder.Clear();
-        typing_complete = false;
-        Get_Dialogue(index);
-        ArchLich_anim.speed = 0;
-        Boss_anim.speed = 0;
-        Set_Dialogue();
+        dialogueBuilder.Clear();
+        isTypingComplete = false;
+        GetDialogue(index);
+        ArchLichAnimator.speed = 0;
+        BossAnimator.speed = 0;
+        SetDialogue();
     }
 
-    void Set_Dialogue()
+    void SetDialogue()
     {
-        typing_complete = false;
-        name_text.text = dialogue_name[name_path];
-        Set_portrait();
-        typing = StartCoroutine(Typing());
+        isTypingComplete = false;
+        nameText.text = dialogueName[namePath];
+        SetPortrait();
+        typingCoroutine = StartCoroutine(Typing());
     }
 
     IEnumerator Typing()
     {
         int _index = 0;
-        while(dialogue_content.Length != _index)
+        while(dialogueContent.Length != _index)
         {
-            Dialoguebuilder.Append(dialogue_content[_index++]);
-            Set_Text();
+            dialogueBuilder.Append(dialogueContent[_index++]);
+            SetText();
             yield return YieldCache.WaitForSeconds(0.05f);
         }
-        Dialoguebuilder.Clear();
-        typing_complete = true;
+        dialogueBuilder.Clear();
+        isTypingComplete = true;
     }
 
-    void Get_Dialogue(int _index)
+    void GetDialogue(int _index)
     {
-        name_path = DataBase.Dialogue_textDB[_index].namepath;
-        dialogue_content = DataBase.Dialogue_textDB[_index].text;
+        namePath = DataBase.Dialogue_textDB[_index].namepath;
+        dialogueContent = DataBase.Dialogue_textDB[_index].text;
     }
 
-    void Set_Text()
+    void SetText()
     {
-        dialogue_text.text = Dialoguebuilder.ToString();
+        dialogueText.text = dialogueBuilder.ToString();
     }
 
-    void Playing_Dialogue()
+    void PlayingDialogue()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (typing_complete)
+            if (isTypingComplete)
             {
                 index++;
                 if (DataBase.Dialogue_textDB.ContainsKey(index))
                 {
-                    Get_Dialogue(index);
-                    Set_Dialogue();
+                    GetDialogue(index);
+                    SetDialogue();
                 }
                 else
                 {
-                    DialogueManager.Instance.Dialogue_End();
+                    DialogueManager.Instance.DialogueEnd();
                 }
             }
             else
             {
-                Dialogue_skip();
+                DialogueSkip();
             }
         }
     }
 
-    void Dialogue_skip()
+    void DialogueSkip()
     {
-        StopCoroutine(typing);
-        Dialoguebuilder.Clear();
-        Dialoguebuilder.Append(dialogue_content);
-        Set_Text();
-        Dialoguebuilder.Clear();
-        typing_complete = true;
+        StopCoroutine(typingCoroutine);
+        dialogueBuilder.Clear();
+        dialogueBuilder.Append(dialogueContent);
+        SetText();
+        dialogueBuilder.Clear();
+        isTypingComplete = true;
     }
 }

@@ -106,61 +106,61 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b9e23e4f4ad894542842177ab622f1fc, type: 3}
   - {fileID: 21300000, guid: 3a39527f4b0790f4ea1a350fcf175f78, type: 3}
   m_PackedSpriteNamesToIndex:
-  - char_Cleopatra_walking_no shadow 02
-  - "char_S\xE9adanda_walking 02"
-  - Char_Gilgamesh_walking_no shadow 07
-  - char_Cleo mob2_walking_no shadow 01
-  - char_Cleo mob2_walking_no shadow 02
-  - char_Cleopatra_dying
-  - char_Cadmus_walking_no shadow 02
-  - "char_S\xE9adanda_walking 08"
-  - "char_S\xE9adanda_walking 03"
-  - "char_S\xE9adanda mob 3_walking 1"
-  - char_Cadmus mob3_walking 02
-  - char_Cleo mob1_walking_no shadow 02
+  - Cleopatra_walk2
+  - Seadanda_walk2
+  - Gilgamesh_walk7
+  - Cleomob2_walk1
+  - Cleomob2_walk2
+  - Cleopatra_die
+  - Cadmus_walk2
+  - Seadanda_walk8
+  - Seadanda_walk3
+  - Seamob3_walk1
+  - Cadmob3_walk2
+  - Cleomob1_walk2
   - Shadow
-  - char_Cleo mob1_walking_no shadow 01
-  - "char_S\xE9adanda_walking 01"
-  - char_Cleopatra_walking_no shadow 03
-  - char_Cleopatra_walking_no shadow 01
-  - char_Cadmus_dying
-  - char_Cadmus_walking_no shadow 08
-  - char_Cleopatra_walking_no shadow 07
-  - "char_S\xE9adanda mob 2_walking 2"
-  - "char_S\xE9adanda mob 3_walking 2"
-  - Char_Gilgamesh_walking_no shadow 06
-  - "char_S\xE9adanda_walking 04"
-  - "char_S\xE9adanda_walking 05"
-  - Char_Gilgamesh_walking_no shadow 08
-  - char_Cadmus_walking_no shadow 01
-  - char_Cadmus_walking_no shadow 03
-  - "char_S\xE9adanda_walking 07"
-  - Char_Gilgamesh_walking_no shadow 04
-  - char_Cadmus_walking_no shadow 05
-  - Char_Gilgamesh_walking_no shadow 02
-  - char_Gilgamesh_dying
-  - "char_S\xE9adanda mob 1_walking 1"
-  - char_Cleopatra_walking_no shadow 06
-  - char_Cleopatra_walking_no shadow 05
-  - Char_Gilgamesh_walking_no shadow 01
-  - char_Cadmus_walking_no shadow 07
-  - "char_S\xE9adanda_walking 06"
-  - char_Cadmus_walking_no shadow 04
-  - char_Cadmus mob2_walking 02
-  - Char_Gilgamesh_walking_no shadow 05
-  - char_Cleopatra_walking_no shadow 08
-  - char_Cadmus_walking_no shadow 06
-  - "char_S\xE9adanda mob 1_walking 2"
-  - Char_Gilgamesh_walking_no shadow 03
-  - char_Cadmus mob1_walking 02
-  - char_Cadmus mob1_walking 01
-  - char_Cleopatra_walking_no shadow 04
-  - "char_S\xE9adanda_dying"
-  - char_Cadmus mob2_walking 01
-  - char_Cleo mob3_walking 01
-  - char_Cleo mob3_walking 02
-  - char_Cadmus mob3_walking 01
-  - "char_S\xE9adanda mob 2_walking 1"
+  - Cleomob1_walk1
+  - Seadanda_walk1
+  - Cleopatra_walk3
+  - Cleopatra_walk1
+  - Cadmus_die
+  - Cadmus_walk8
+  - Cleopatra_walk7
+  - Seamob2_walk2
+  - Seamob3_walk2
+  - Gilgamesh_walk6
+  - Seadanda_walk4
+  - Seadanda_walk5
+  - Gilgamesh_walk8
+  - Cadmus_walk1
+  - Cadmus_walk3
+  - Seadanda_walk7
+  - Gilgamesh_walk4
+  - Cadmus_walk5
+  - Gilgamesh_walk2
+  - Gilgamesh_die
+  - Seamob1_walk1
+  - Cleopatra_walk6
+  - Cleopatra_walk5
+  - Gilgamesh_walk1
+  - Cadmus_walk7
+  - Seadanda_walk6
+  - Cadmus_walk4
+  - Cadmob2_walk2
+  - Gilgamesh_walk5
+  - Cleopatra_walk8
+  - Cadmus_walk6
+  - Seamob1_walk2
+  - Gilgamesh_walk3
+  - Cadmob1_walk2
+  - Cadmob1_walk1
+  - Cleopatra_walk4
+  - Seadanda_die
+  - Cadmob2_walk1
+  - Cleomob3_walk1
+  - Cleomob3_walk2
+  - Cadmob3_walk1
+  - Seamob2_walk1
   m_RenderDataMap: {}
   m_Tag: MonsterAtlas
   m_IsVariant: 0

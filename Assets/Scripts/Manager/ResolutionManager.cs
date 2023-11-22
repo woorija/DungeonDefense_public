@@ -60,6 +60,7 @@ public class ResolutionManager : MonoBehaviour
         {
             SetWindow();
         }
+        ResolutionUpdate();
     }
     public void ChangeResolutionSize()
     {
@@ -81,5 +82,6 @@ public class ResolutionManager : MonoBehaviour
                 Set1920();
                 break;
         }
+        ResolutionUpdate();
     }
 }

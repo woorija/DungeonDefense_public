@@ -6,22 +6,22 @@ public class PoolManager : MonoBehaviour
 {
     public static PoolManager Instance;
 
-    int unitcount = 70;
-    int monstercount = 30;
-    int explosioncount = 20;
-    int firecount = 30;
-    int bustcount = 40;
+    int unitCount = 70;
+    int monsterCount = 30;
+    int explosionCount = 20;
+    int fireCount = 30;
+    int bustCount = 40;
 
     Queue<GameObject> UnitPool;
     Queue<Monster> MonsterPool;
     Queue<Explosion> ExplosionPool;
-    Queue<Fire_field> FireFieldPool;
+    Queue<FireField> FireFieldPool;
     Queue<VampireBust> BustPool;
 
     [SerializeField] GameObject unitprefab;
     [SerializeField] Monster monsterprefab;
     [SerializeField] Explosion explosionprefab;
-    [SerializeField] Fire_field firefieldprefab;
+    [SerializeField] FireField firefieldprefab;
     [SerializeField] VampireBust bustprefab;
     private void Awake()
     {
@@ -30,36 +30,36 @@ public class PoolManager : MonoBehaviour
     }
     void PoolInit()
     {
-        UnitPool= new Queue<GameObject>(unitcount);
-        MonsterPool = new Queue<Monster>(monstercount);
-        ExplosionPool = new Queue<Explosion>(explosioncount);
-        FireFieldPool= new Queue<Fire_field>(firecount);
-        BustPool = new Queue<VampireBust>(bustcount);
-        for (int i=0; i < unitcount; i++)
+        UnitPool= new Queue<GameObject>(unitCount);
+        MonsterPool = new Queue<Monster>(monsterCount);
+        ExplosionPool = new Queue<Explosion>(explosionCount);
+        FireFieldPool= new Queue<FireField>(fireCount);
+        BustPool = new Queue<VampireBust>(bustCount);
+        for (int i=0; i < unitCount; i++)
         {
             GameObject unit = Instantiate(unitprefab);
             UnitPool.Enqueue(unit);
             unit.SetActive(false);
         }
-        for (int i = 0; i < monstercount; i++)
+        for (int i = 0; i < monsterCount; i++)
         {
             Monster monster = Instantiate(monsterprefab);
             MonsterPool.Enqueue(monster);
             monster.gameObject.SetActive(false);
         }
-        for (int i = 0; i < explosioncount; i++)
+        for (int i = 0; i < explosionCount; i++)
         {
             Explosion explosion = Instantiate(explosionprefab);
             ExplosionPool.Enqueue(explosion);
             explosion.gameObject.SetActive(false);
         }
-        for (int i = 0; i < firecount; i++)
+        for (int i = 0; i < fireCount;  i++)
         {
-            Fire_field firefield = Instantiate(firefieldprefab);
+            FireField firefield = Instantiate(firefieldprefab);
             FireFieldPool.Enqueue(firefield);
             firefield.gameObject.SetActive(false);
         }
-        for(int i = 0; i < bustcount; i++)
+        for(int i = 0; i < bustCount; i++)
         {
             VampireBust bust = Instantiate(bustprefab);
             BustPool.Enqueue(bust);
@@ -105,13 +105,13 @@ public class PoolManager : MonoBehaviour
         temp.gameObject.transform.position = _pos;
         return temp;
     }
-    public Fire_field GetFireField()
+    public FireField GetFireField()
     {
         var temp = FireFieldPool.Dequeue();
         temp.gameObject.SetActive(true);
         return temp;
     }
-    public Fire_field GetFireField(Vector3 _pos)
+    public FireField GetFireField(Vector3 _pos)
     {
         var temp = FireFieldPool.Dequeue();
         temp.gameObject.SetActive(true);
@@ -147,7 +147,7 @@ public class PoolManager : MonoBehaviour
         ExplosionPool.Enqueue(explosion);
         explosion.gameObject.SetActive(false);
     }
-    public void ReturnFireField(Fire_field firefield)
+    public void ReturnFireField(FireField firefield)
     {
         FireFieldPool.Enqueue(firefield);
         firefield.gameObject.SetActive(false);

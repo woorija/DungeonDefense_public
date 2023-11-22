@@ -15,7 +15,7 @@ public class MonsterSpawner : MonoBehaviour
     void Spawn(int _num, int _type) // 몬스터 1마리를 데이터에 맞춰 스폰
     {
         Monster monster = PoolManager.Instance.GetMonster();
-        monster.Init(_type, GameManager.Instance.Stage_manager.Get_current_monstercategory() * 10 + _num);
+        monster.Init(_type, GameManager.Instance.stageManager.GetCurrentMonstercategory() * 10 + _num);
     }
     int SetMonsterType()
     {
@@ -30,13 +30,13 @@ public class MonsterSpawner : MonoBehaviour
     }
     public void SpawnStart(int _stage) // _stage = stage*100+wave
     {
-        switch (GameManager.Instance.gamemode) // 보스웨이브 체크
+        switch (GameManager.Instance.gameMode) // 보스웨이브 체크
         {
             case GameMode.Story:
-                IsBosswave_story(_stage);
+                IsBossWaveStory(_stage);
                 break;
             case GameMode.Infinity:
-                IsBosswave_infinity(_stage);
+                IsBossWaveInfinity(_stage);
                 break;
         }
 
@@ -50,7 +50,7 @@ public class MonsterSpawner : MonoBehaviour
                 break;
         }
     }
-    void IsBosswave_story(int _stage)
+    void IsBossWaveStory(int _stage)
     {
         if (_stage == 401)
         {
@@ -69,7 +69,7 @@ public class MonsterSpawner : MonoBehaviour
             }
         }
     }
-    void IsBosswave_infinity(int _stage)
+    void IsBossWaveInfinity(int _stage)
     {
         if (_stage % 500 == 1) // 길가메시 스테이지 : 5 * x 스테이지
         {

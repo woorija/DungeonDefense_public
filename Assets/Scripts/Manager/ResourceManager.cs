@@ -5,16 +5,16 @@ using UnityEngine.U2D;
 
 public class ResourceManager : MonoBehaviour
 {
-    public static RuntimeAnimatorController Get_Animator(string _path)
+    public static RuntimeAnimatorController GetAnimator(string _path)
     {
         return Resources.Load<RuntimeAnimatorController>("Animators/" + _path);
     }
 
-    public static Sprite Get_Sprite(string _path)
+    public static Sprite GetSprite(string _path)
     {
         return Resources.Load<Sprite>(_path);
     }
-    public static Sprite GetSprite_to_atlas(string _path, string _name)
+    public static Sprite GetSpriteToAtlas(string _path, string _name)
     {
         return Resources.Load<SpriteAtlas>($"Atlas/{_path}").GetSprite(_name);
     }

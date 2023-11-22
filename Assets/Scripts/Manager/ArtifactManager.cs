@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,26 +33,27 @@ using UnityEngine.Events;
 public class ArtifactManager : MonoBehaviour
 {
     public static ArtifactManager Instance;
-    public bool[] have_Artifact { get; private set; } // x번유물 소지 여부 - 실제 옵션체크용
+    public bool[] hasArtifacts { get; private set; } // x번유물 소지 여부 - 실제 옵션체크용
     public List<int> Artifacts { get; private set; } // 소지중인 유물 리스트 - 랜덤제외, UI출력용
-    public List<int> Not_have_Artifactlist = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+    public List<int> notHaveArtifactList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
     [SerializeField] ArtifactIcon[] ArtifactIcons; // 아이콘들
-    [SerializeField] ArtifactInformation Artifact_inforUI; // 정보UI
+    [SerializeField] ArtifactInformation ArtifactInforUI; // 정보UI
 
+    public Action onGetArtifact;
     UnityEvent E_Artifactoption_Apply; // 유물효과 적용
     private void Awake()
     {
         Instance = this;
-        have_Artifact = new bool[19];
+        hasArtifacts = new bool[19];
         Artifacts = new List<int>(25);
         E_Artifactoption_Apply = new UnityEvent();
     }
 
     public void Reset() // 리스타트시 초기화
     {
-        for (int i = 0; i < have_Artifact.Length; i++)
+        for (int i = 0; i < hasArtifacts.Length; i++)
         {
-            have_Artifact[i] = false;
+            hasArtifacts[i] = false;
         }
         Artifacts.Clear();
         for(int i = 0; i < ArtifactIcons.Length; i++)
@@ -70,81 +72,64 @@ public class ArtifactManager : MonoBehaviour
 
     public void Init() // 시작시
     {
-        for(int i = 0; i < have_Artifact.Length; i++)
+        for(int i = 0; i < hasArtifacts.Length; i++)
         {
-            have_Artifact[i] = false;
+            hasArtifacts[i] = false;
         }
     }
-    void ArtifactIcon_Update()
+    void ArtifactIconUpdate()
     {
         for (int i = 0; i < Artifacts.Count; i++)
         {
-            ArtifactIcons[i].Set_Artifact(Artifacts[i]);
+            ArtifactIcons[i].SetArtifact(Artifacts[i]);
         }
     }
 
-    public void Get_Artifact(int _num) // 유물획득
+    public void GetArtifact(int _num) // 유물획득
     {
-        have_Artifact[_num] = true;
+        hasArtifacts[_num] = true;
         Artifacts.Add(_num);
         if (_num != 18)
         {
-            Not_have_Artifactlist.Remove(_num);
+            notHaveArtifactList.Remove(_num);
         }
         ArtifactIcons[Artifacts.Count - 1].gameObject.SetActive(true);
-        Apply_ArtifactOption(); //유물획득시 옵션적용
-        ArtifactIcon_Update();
+        onGetArtifact();//유물획득시 옵션적용
+        ArtifactIconUpdate();
     }
-    public void Get_Random_Artifact() // 아크리치 우클릭 함수
+    public void GetRandomArtifact() // 아크리치 우클릭 함수
     {
-        int result = Not_have_Artifactlist[Random.Range(0, Not_have_Artifactlist.Count)];
-        Get_Artifact(result);
+        int result = notHaveArtifactList[UnityEngine.Random.Range(0, notHaveArtifactList.Count)];
+        GetArtifact(result);
     }
-    public void Use_MonsterExit_Artifact() // 긴급탈출장치 작동시
+    public void UseMonsterExitArtifact() // 긴급탈출장치 작동시
     {
         Debug.Log(Artifacts.Count);
         for (int i = 0; i < Artifacts.Count; i++)
         {
-            if (ArtifactIcons[i].Get_Artifactnum() == 18)
+            if (ArtifactIcons[i].GetArtifactNumber() == 18)
             {
-                ArtifactIcons[i].Remove_Artifact();
+                ArtifactIcons[i].RemoveArtifact();
                 break;
             }
         }
         ArtifactIcons[Artifacts.Count - 1].gameObject.SetActive(false);
         Artifacts.Remove(18);
-        ArtifactIcon_Update();
+        ArtifactIconUpdate();
         if (!Artifacts.Contains(18))
         {
-            have_Artifact[18] = false; //남은 긴급탈출장치가 없으면 소지하지 않는 상태로 변경
+            hasArtifacts[18] = false; //남은 긴급탈출장치가 없으면 소지하지 않는 상태로 변경
         }
     }
     //정보창 관련
-    public void Popup_information(int _num)
+    public void PopupInformation(int _num)
     {
-        Artifact_inforUI.gameObject.SetActive(true);
-        Artifact_inforUI.Set_infor(_num);
+        ArtifactInforUI.gameObject.SetActive(true);
+        ArtifactInforUI.Set_infor(_num);
     }
 
-    public void exit_information()
+    public void ExitInformation()
     {
-        Artifact_inforUI.gameObject.SetActive(false);
+        ArtifactInforUI.gameObject.SetActive(false);
     }
-
-    #region 이벤트관련
-    public void AddApply_list(UnityAction _function)
-    {
-        E_Artifactoption_Apply.AddListener(_function);
-    }
-
-    public void RemoveApply_list(UnityAction _function)
-    {
-        E_Artifactoption_Apply.RemoveListener(_function);
-    }
-
-    void Apply_ArtifactOption()
-    {
-        E_Artifactoption_Apply.Invoke();
-    }
-    #endregion
 }

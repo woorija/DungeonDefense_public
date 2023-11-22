@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7008845480754496902}
   - component: {fileID: 5013236466978265174}
   m_Layer: 0
-  m_Name: Artifactbox
+  m_Name: ArtifactBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

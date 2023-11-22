@@ -29,7 +29,7 @@ public class MonsterHPbar : MonoBehaviour
     {
         hpbar.gameObject.SetActive(_on);
     }
-    public void ypos_Init(int _monstertype)
+    public void YposInit(int _monstertype)
     {
         switch (_monstertype)
         {

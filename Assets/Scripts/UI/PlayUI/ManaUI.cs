@@ -6,29 +6,29 @@ using UnityEngine.UI;
 
 public class ManaUI : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
-    [SerializeField] Image mana_image;
-    [SerializeField] Text mana_text;
+    [SerializeField] Image manaImage;
+    [SerializeField] Text manaText;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        mana_text.color = Color.white;
+        manaText.color = Color.white;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        mana_text.color = new Color(0, 0, 0, 0);
+        manaText.color = new Color(0, 0, 0, 0);
     }
 
     private void Update()
     {
         //마나 UI관리
-        if (mana_image.fillAmount != GameManager.Instance.Money_manager.mana)
+        if (manaImage.fillAmount != GameManager.Instance.moneyManager.mana)
         {
-            mana_image.fillAmount = Mathf.Lerp(mana_image.fillAmount, GameManager.Instance.Money_manager.mana / GameManager.Instance.Money_manager.max_mana, Time.deltaTime * 4); //부드러운 증감
+            manaImage.fillAmount = Mathf.Lerp(manaImage.fillAmount, GameManager.Instance.moneyManager.mana / GameManager.Instance.moneyManager.maxMana, Time.deltaTime * 4); //부드러운 증감
         }
     }
-    public void TextUpdate(float _mana, int _maxmana)
+    public void TextUpdate(float _mana, int _maxMana)
     {
-        mana_text.text = string.Format(_mana + " / " + _maxmana);
+        manaText.text = string.Format(_mana + " / " + _maxMana);
     }
 }

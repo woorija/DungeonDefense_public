@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UnittileButton : MonoBehaviour, IPointerClickHandler
+public class UnitTileButton : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] Unittile _unittile;
-    int unit_num;
+    [SerializeField] UnitTile unitTile;
+    int unitNum;
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -14,20 +14,23 @@ public class UnittileButton : MonoBehaviour, IPointerClickHandler
             if (UnitDrag.Instance.isDrag)
             {
                 UnitDrag.Instance.DragEnd();
-                if (!_unittile.unit_check)
+                if (!unitTile.unitCheck)
                 {
                     int num = UnitDrag.Instance.unit_num;
-                    _unittile.Create_Unit(num);
-                    unit_num = num;
+                    unitTile.CreateUnit(num);
+                    unitNum = num;
                 }
             }
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            DecreaseUnitcount(unit_num);
-            GetMana(unit_num);
-            _unittile.Delete_Unit();
-            //유닛 제거하고 소량의 마나로 변환
+            if (unitTile.unitCheck)
+            {
+                DecreaseUnitcount(unitNum);
+                GetMana(unitNum);
+                unitTile.DeleteUnit();
+                //유닛 제거하고 소량의 마나로 변환
+            }
         }
     }
     void DecreaseUnitcount(int _num)
@@ -35,16 +38,16 @@ public class UnittileButton : MonoBehaviour, IPointerClickHandler
         switch (_num % 4)
         {
             case 0:
-                GameManager.Instance.Synergy_manager.Decrease_Unitcount(UnitType.Skeleton);
+                GameManager.Instance.synergyManager.DecreaseUnitcount(UnitType.Skeleton);
                 break;
             case 1:
-                GameManager.Instance.Synergy_manager.Decrease_Unitcount(UnitType.Ghost);
+                GameManager.Instance.synergyManager.DecreaseUnitcount(UnitType.Ghost);
                 break;
             case 2:
-                GameManager.Instance.Synergy_manager.Decrease_Unitcount(UnitType.Vampire);
+                GameManager.Instance.synergyManager.DecreaseUnitcount(UnitType.Vampire);
                 break;
             case 3:
-                GameManager.Instance.Synergy_manager.Decrease_Unitcount(UnitType.Zombie);
+                GameManager.Instance.synergyManager.DecreaseUnitcount(UnitType.Zombie);
                 break;
         }
     }
@@ -53,13 +56,13 @@ public class UnittileButton : MonoBehaviour, IPointerClickHandler
         switch(_num / 4)
         {
             case 0:
-                GameManager.Instance.Money_manager.Get_mana(4);
+                GameManager.Instance.moneyManager.GetMana(4);
                 break;
             case 1:
-                GameManager.Instance.Money_manager.Get_mana(12);
+                GameManager.Instance.moneyManager.GetMana(12);
                 break;
             case 2:
-                GameManager.Instance.Money_manager.Get_mana(36);
+                GameManager.Instance.moneyManager.GetMana(36);
                 break;
         }
     }

@@ -47,7 +47,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c517a7261ac84714e814251e7a6860e9, type: 3}
   - {fileID: 21300000, guid: b3c812f604403d64b9aca0fc523497b2, type: 3}
   - {fileID: 21300000, guid: c56c6f57b8d2c5249b890265c57af654, type: 3}
-  - {fileID: 21300000, guid: 6252dd0abc5592e4a814f8dbf42133e3, type: 3}
   - {fileID: 21300000, guid: f3d9591cf8f8cd340b96a71bb7ef341c, type: 3}
   - {fileID: 21300000, guid: 1542cd8fdf0b3484c959b2c2ad126a73, type: 3}
   - {fileID: 21300000, guid: 35f0cadf6abd1a141b74d0c0adaf5e7e, type: 3}
@@ -61,7 +60,6 @@ SpriteAtlas:
   - DeathKnight
   - SkeletonKnight
   - Ghost
-  - Field
   - Zombie
   - Ghoul
   - VampireLord

@@ -106,7 +106,7 @@ public class MonsterDB : MonoBehaviour,ICSVRead
     {
         MonsterBD = new Dictionary<int, MonsterData>(64);
         StageBD = new Dictionary<int, StageData>(64);
-        switch (GameManager.Instance.gamemode)
+        switch (GameManager.Instance.gameMode)
         {
             case GameMode.Story:
                 ReadCSV("StoryMonsterData");

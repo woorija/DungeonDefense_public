@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Phantom : UnitBase
 {
-    int bonus_damage;
-    int total_bonus_damage;
+    int bonusDamage;
     protected override void Update()
     {
         base.Update();
@@ -13,29 +12,27 @@ public class Phantom : UnitBase
 
     public override void UnitInit(int _num)
     {
-        GameManager.Instance.Synergy_manager.Increase_Unitcount(UnitType.Ghost);
+        GameManager.Instance.synergyManager.IncreaseUnitcount(UnitType.Ghost);
         base.UnitInit(_num);
         AttackEvent.AddListener(AttackMonster);
-        GameManager.Instance.Ability_manager.Add_ghost_list(SpecialAbility);
+        GameManager.Instance.abilityManager.OnGhostTypeKilled += SpecialAbility;
     }
     public override void UnitDelete()
     {
-        GameManager.Instance.Ability_manager.Remove_ghost_list(SpecialAbility);
+        GameManager.Instance.abilityManager.OnGhostTypeKilled -= SpecialAbility;
         base.UnitDelete();
     }
 
-    protected override void Apply_ArtifactOption()
+    protected override void ApplyArtifactOption()
     {
-        int add_type_damage = ArtifactManager.Instance.have_Artifact[1] ? 5 : 0;
-        bonus_damage = ArtifactManager.Instance.have_Artifact[9] ? 2 : 1;
+        int addTypeDamage = ArtifactManager.Instance.hasArtifacts[1] ? 5 : 0;
+        bonusDamage = ArtifactManager.Instance.hasArtifacts[9] ? 2 : 1;
 
-        damage = BaseData.base_attackpower + add_type_damage;
-        temp_cooltime = BaseData.base_attackcooltime;
-        Debug.Log("Phantom | " + add_type_damage + " | " + bonus_damage + " | " + temp_cooltime);
+        damage = BaseData.baseAttackPower + addTypeDamage;
+        tempCooltime = BaseData.baseAttackCooltime;
     }
     protected override void SpecialAbility()
     {
-        total_bonus_damage += bonus_damage;
-        damage += bonus_damage;
+        damage += bonusDamage;
     }
 }
